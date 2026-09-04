@@ -5,6 +5,8 @@ import express, {
 } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { globalErrorHandler } from "./middleware/globalErrorHandler";
+import { notFound } from "./middleware/notFound";
 
 
 export const app: Application = express();
@@ -32,5 +34,5 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Welcome To The Kanban Server");
 });
 
-// app.use(globalErrorHandler);
-// app.use(notFound);
+app.use(globalErrorHandler);
+app.use(notFound);
