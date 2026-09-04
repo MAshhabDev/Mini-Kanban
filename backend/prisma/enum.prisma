@@ -1,0 +1,16 @@
+enum BoardRole {
+  OWNER
+  COLLABORATOR
+  VIEWER
+}
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}

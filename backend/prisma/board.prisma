@@ -1,0 +1,13 @@
+model Board {
+    id          String        @id @default(uuid())
+    title       String
+    description String?
+    ownerId     String
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @updatedAt
+    owner       User          @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+    members     BoardMember[]
+    columns     Column[]
+
+    @@index([ownerId])
+}
