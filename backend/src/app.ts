@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { globalErrorHandler } from "./middleware/globalErrorHandler";
 import { notFound } from "./middleware/notFound";
+import { boardRoute } from "./module/board/board.route";
 
 
 export const app: Application = express();
@@ -26,6 +27,9 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
+app.use("/api/boards", boardRoute);
+
 
 
 
