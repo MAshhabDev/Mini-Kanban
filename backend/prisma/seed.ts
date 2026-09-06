@@ -9,7 +9,7 @@ const seed = async () => {
     const hashedPassword = await bcrypt.hash("123456", saltRounds);
 
     // 1. Seed Admin User
-    const adminEmail = "admin@example.com";
+    const adminEmail = "admin@email.com";
     const existingAdmin = await prisma.user.findUnique({
       where: { email: adminEmail },
     });
@@ -29,7 +29,7 @@ const seed = async () => {
     }
 
     // 2. Seed Standard User
-    const userEmail = "user@example.com";
+    const userEmail = "user@email.com";
     const existingUser = await prisma.user.findUnique({
       where: { email: userEmail },
     });
