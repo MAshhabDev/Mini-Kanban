@@ -49,14 +49,20 @@ export const registerAction = async (data: {
   name: string;
   email: string;
   password: string;
+  role?: string;
 }) => {
   try {
+    const payload = {
+      ...data,
+      role: data.role || "USER",
+    };
+
     const res = await fetch(`${BASE_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
       cache: "no-store",
     });
 

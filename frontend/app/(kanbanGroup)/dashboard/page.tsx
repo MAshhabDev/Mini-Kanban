@@ -10,12 +10,15 @@ const DashboardPage = async () => {
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-800 pb-6">
         <div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-white">Your Boards</h1>
-          <p className="text-sm text-slate-400 mt-1">Manage your project workflows and team boards</p>
+          <h1 className="text-3xl font-extrabold tracking-tight text-white">
+            Your Boards
+          </h1>
+          <p className="text-sm text-slate-400 mt-1">
+            Manage your project workflows and team boards
+          </p>
         </div>
         <CreateBoardModal />
       </div>
@@ -28,7 +31,9 @@ const DashboardPage = async () => {
           </div>
           <div className="space-y-1">
             <h3 className="text-lg font-bold text-white">No boards found</h3>
-            <p className="text-sm text-slate-400">Get started by creating your first Kanban board.</p>
+            <p className="text-sm text-slate-400">
+              Get started by creating your first Kanban board.
+            </p>
           </div>
         </div>
       ) : (

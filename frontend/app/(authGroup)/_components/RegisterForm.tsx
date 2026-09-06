@@ -13,6 +13,7 @@ interface RegisterFormInputs {
   name: string;
   email: string;
   password: string;
+  role?: string;
 }
 
 export const RegisterForm = () => {
@@ -24,7 +25,7 @@ export const RegisterForm = () => {
   const onSubmit = async (data: RegisterFormInputs) => {
     setIsLoading(true);
     try {
-      const res = await registerAction(data);
+      const res = await registerAction({ ...data, role: data.role || "USER" });
       if (res.success) {
         toast.success("Account created successfully! Please sign in.");
         router.push("/login");
