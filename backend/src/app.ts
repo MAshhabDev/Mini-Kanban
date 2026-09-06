@@ -12,8 +12,12 @@ import { boardRoute } from "./module/board/board.route";
 import boardShareRoute from "./module/boardShare/boardShare.route";
 import columnRoute from "./module/column/column.routes";
 import taskRoute from "./module/task/task.route";
+import { autoSeed } from "./utils/seed";
 
 export const app: Application = express();
+
+// Automatically seed Admin & Normal User if not exist
+autoSeed();
 
 app.use(cors({ origin: true, credentials: true }));
 

@@ -6,9 +6,9 @@ import type { ICreate, ILogin } from "./auth.interface";
 import { jwtUtils } from "../../utils/jwt";
 
 const createUser = async (payload: ICreate) => {
-  const { name, email, password, role } = payload;
+  const { name, email, password, role = "USER" } = payload;
 
-  if (!name || !email || !password || !role) {
+  if (!name || !email || !password) {
     throw new Error("Please Input The Field Properly");
   }
 
